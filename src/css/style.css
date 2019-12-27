@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?x5gd3h');
-  src:  url('fonts/icomoon.eot?x5gd3h#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?x5gd3h') format('truetype'),
-    url('fonts/icomoon.woff?x5gd3h') format('woff'),
-    url('fonts/icomoon.svg?x5gd3h#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?t8fst1');
+  src:  url('fonts/icomoon.eot?t8fst1#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?t8fst1') format('truetype'),
+    url('fonts/icomoon.woff?t8fst1') format('woff'),
+    url('fonts/icomoon.svg?t8fst1#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -30,4 +30,19 @@
 }
 .icon-lock:before {
   content: "\e98f";
+}
+.icon-dice:before {
+  content: "\e915";
+}
+.icon-cart:before {
+  content: "\e93a";
+}
+.icon-users:before {
+  content: "\e972";
+}
+.icon-stats-dots:before {
+  content: "\e99b";
+}
+.icon-clipboard:before {
+  content: "\e9b8";
 }
