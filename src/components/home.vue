@@ -17,6 +17,7 @@
           active-text-color="#409eff"
           unique-opened
           :collapse-transition="false"
+          router
         >
           <el-submenu :index="String(item.id)" v-for="item in menulist" :key="item.id">
             <template slot="title">
@@ -24,7 +25,7 @@
               <span>{{item.authName}}</span>
             </template>
             <el-menu-item
-              :index="String(subitem.id)"
+              :index="'/'+subitem.path"
               v-for="subitem in item.children"
               :key="subitem.id"
             >
@@ -36,7 +37,9 @@
           </el-submenu>
         </el-menu>
       </el-aside>
-      <el-main>Main</el-main>
+      <el-main>
+        <router-view></router-view>
+      </el-main>
     </el-container>
   </el-container>
 </template>
