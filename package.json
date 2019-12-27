@@ -1,7 +1,6 @@
 {
   "name": "WWW",
   "version": "1.0.0",
-  "description": "",
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,13 +11,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.7.5",
+    "@babel/core": "^7.7.7",
     "@babel/plugin-proposal-class-properties": "^7.7.4",
     "@babel/plugin-transform-runtime": "^7.7.6",
-    "@babel/preset-env": "^7.7.6",
+    "@babel/preset-env": "^7.7.7",
     "@babel/preset-react": "^7.7.4",
     "@babel/preset-stage-0": "^7.0.0",
-    "@babel/runtime": "^7.7.6",
+    "@babel/runtime": "^7.7.7",
     "babel-loader": "^8.0.6",
     "babel-plugin-component": "^1.1.1",
     "babel-plugin-import": "^1.13.0",
@@ -39,7 +38,7 @@
     "react-router-dom": "^5.1.2",
     "sass": "^1.23.7",
     "sass-loader": "^8.0.0",
-    "style-loader": "^1.0.2",
+    "style-loader": "^1.1.2",
     "terser-webpack-plugin": "^2.2.1",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "url-loader": "^2.3.0",
@@ -47,9 +46,9 @@
     "vue-resource": "^1.5.1",
     "vue-router": "^3.1.3",
     "vue-template-compiler": "^2.6.11",
-    "webpack": "^4.41.3",
+    "webpack": "^4.41.4",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0"
+    "webpack-dev-server": "^3.10.1"
   },
   "dependencies": {
     "@babel/core": "^7.7.2",
@@ -91,5 +90,14 @@
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/k1287988804/shopManager.git"
+  },
+  "bugs": {
+    "url": "https://github.com/k1287988804/shopManager/issues"
+  },
+  "homepage": "https://github.com/k1287988804/shopManager#readme",
+  "description": ""
 }
