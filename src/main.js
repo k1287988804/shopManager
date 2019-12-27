@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './app.vue'
 import router from './router.js'
 import axios from 'axios'
-axios.interceptors.request.use(config=>{
+axios.interceptors.request.use(config => {
     config.headers.Authorization = window.sessionStorage.getItem('token')
     return config
 })
@@ -16,8 +16,8 @@ import './plugins/element.js'
 
 
 
-var vm=new Vue({
-    el:'#app',
-    render:c=>c(App),
-    router 
+var vm = new Vue({
+    el: '#app',
+    render: c => c(App),
+    router
 })

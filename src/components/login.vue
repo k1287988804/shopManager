@@ -13,7 +13,7 @@
       >
         <!-- 用户名 -->
         <el-form-item prop="username">
-          <el-input v-model="loginForm.username"  prefix-icon="icon-user"></el-input>
+          <el-input v-model="loginForm.username" prefix-icon="icon-user"></el-input>
         </el-form-item>
         <!-- 密码 -->
         <el-form-item prop="password">
@@ -39,37 +39,37 @@ export default {
   data() {
     return {
       loginForm: {
-        username: "admin",
-        password: "123456"
+        username: 'admin',
+        password: '123456'
       },
       loginFormRules: {
         username: [
-          { required: true, message: "请输入用户名", trigger: "blur" },
-          { min: 5, max: 13, message: "长度在 5 到 13 个字符", trigger: "blur" }
+          { required: true, message: '请输入用户名', trigger: 'blur' },
+          { min: 5, max: 13, message: '长度在 5 到 13 个字符', trigger: 'blur' }
         ],
         password: [
-          { required: true, message: "请输入密码", trigger: "blur" },
-          { min: 6, max: 13, message: "长度在 6 到 13 个字符", trigger: "blur" }
+          { required: true, message: '请输入密码', trigger: 'blur' },
+          { min: 6, max: 13, message: '长度在 6 到 13 个字符', trigger: 'blur' }
         ]
       }
-    };
+    }
   },
-  methods:{
-    resetLoginForm(){
+  methods: {
+    resetLoginForm() {
       this.$refs.loginFormRef.resetFields()
     },
-    login(){
-      this.$refs.loginFormRef.validate(async valid=>{
-        if(!valid) return;
-        var {data:res} = await this.$http.post('login',this.loginForm)
-        if(res.meta.status !== 200) return this.$message.error("登录失败")
-        this.$message.success("登录成功") 
-        window.sessionStorage.setItem('token',res.data.token);
-        this.$router.push("/home")
+    login() {
+      this.$refs.loginFormRef.validate(async valid => {
+        if (!valid) return
+        var { data: res } = await this.$http.post('login', this.loginForm)
+        if (res.meta.status !== 200) return this.$message.error('登录失败')
+        this.$message.success('登录成功')
+        window.sessionStorage.setItem('token', res.data.token)
+        this.$router.push('/home')
       })
     }
   }
-};
+}
 </script>
 
 <style lang='less' scoped>

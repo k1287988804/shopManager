@@ -8,8 +8,16 @@
       <el-button type="info" @click="exit">退出</el-button>
     </el-header>
     <el-container>
-      <el-aside width="200px">
-        <el-menu background-color="#333744" text-color="#fff" active-text-color="#409eff" unique-opened>
+      <el-aside :width="iscollapse?60+'px':200+'px'">
+        <div class="toggle-button" @click="changeCollapse">|||</div>
+        <el-menu
+          :collapse="iscollapse"
+          background-color="#333744"
+          text-color="#fff"
+          active-text-color="#409eff"
+          unique-opened
+          :collapse-transition="false"
+        >
           <el-submenu :index="String(item.id)" v-for="item in menulist" :key="item.id">
             <template slot="title">
               <i :class="[iconsObj[item.id],'iconFont']"></i>
@@ -38,30 +46,40 @@ export default {
   data() {
     return {
       menulist: [],
-      iconsStr:['icon-users','icon-dice','icon-cart','icon-clipboard','icon-stats-dots'], //5个icon图标
-      iconsObj: {}
-    };
+      iconsStr: [
+        'icon-users',
+        'icon-dice',
+        'icon-cart',
+        'icon-clipboard',
+        'icon-stats-dots'
+      ], //5个icon图标
+      iconsObj: {},
+      iscollapse: false
+    }
   },
   created() {
-    this.getMenuList();
+    this.getMenuList()
   },
   methods: {
     exit() {
-      window.sessionStorage.clear();
-      this.$router.push("/login");
+      window.sessionStorage.clear()
+      this.$router.push('/login')
     },
     async getMenuList() {
-      const { data: res } = await this.$http.get("menus");
-      if (res.meta.status !== 200) return this.$message.error(res.meta.msg);
-      this.menulist = res.data;
-      this.menulist.forEach((item,i)=>{
-          this.iconsObj[item.id] = this.iconsStr[i]
-      }) 
-      console.log(this.iconsObj); 
-      console.log(this.menulist);
+      const { data: res } = await this.$http.get('menus')
+      if (res.meta.status !== 200) return this.$message.error(res.meta.msg)
+      this.menulist = res.data
+      this.menulist.forEach((item, i) => {
+        this.iconsObj[item.id] = this.iconsStr[i]
+      })
+      console.log(this.iconsObj)
+      console.log(this.menulist)
+    },
+    changeCollapse() {
+      this.iscollapse = !this.iscollapse
     }
   }
-};
+}
 </script>
 
 <style lang='less' scoped>
@@ -96,8 +114,19 @@ export default {
 }
 .el-aside {
   background-color: #333744;
-  .iconFont{
-      margin-right:10px;
+  .toggle-button {
+    font-size: 10px;
+    line-height: 24px;
+    background-color: #4a5064;
+    color: rgb(223, 221, 221);
+    text-align: center;
+    letter-spacing: 0.2em;
+  }
+  .el-menu {
+    border: none;
+  }
+  .iconFont {
+    margin-right: 10px;
   }
 }
 .el-main {
