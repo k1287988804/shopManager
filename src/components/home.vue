@@ -11,6 +11,7 @@
       <el-aside :width="iscollapse?60+'px':200+'px'">
         <div class="toggle-button" @click="changeCollapse">|||</div>
         <el-menu
+          :default-active="$route.path"
           :collapse="iscollapse"
           background-color="#333744"
           text-color="#fff"
@@ -62,6 +63,7 @@ export default {
   },
   created() {
     this.getMenuList()
+    console.dir(this.$route)
   },
   methods: {
     exit() {

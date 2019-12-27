@@ -10,6 +10,7 @@ Vue.prototype.$http = axios
 axios.defaults.baseURL = "http://localhost:8888/api/private/v1/"
 import './css/normalize.css'
 import './css/style.css'
+import './css/global.css'
 // elementUI
 import './plugins/element.js'
 
