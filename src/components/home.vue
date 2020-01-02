@@ -63,7 +63,6 @@ export default {
   },
   created() {
     this.getMenuList()
-    console.dir(this.$route)
   },
   methods: {
     exit() {
@@ -77,8 +76,6 @@ export default {
       this.menulist.forEach((item, i) => {
         this.iconsObj[item.id] = this.iconsStr[i]
       })
-      console.log(this.iconsObj)
-      console.log(this.menulist)
     },
     changeCollapse() {
       this.iscollapse = !this.iscollapse
